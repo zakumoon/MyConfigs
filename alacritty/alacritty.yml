@@ -1,0 +1,81 @@
+window:
+  decorations: none
+  opacity: 0.9
+
+scrolling:
+  history: 10000
+set: 
+font:
+  normal:
+    family: monospace
+    style: Regular
+
+  bold:
+    family: monospace
+    style: Bold
+
+  italic:
+    family: monospace
+    style: Italic
+
+      #point size
+  size: 11.1
+
+
+    
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+offset:
+    x: 0
+    y: 1
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increasing `x` moves the glyph to the right,
+  # increasing `y` moves the glyph upwards.
+glyph_offset:
+  x: 0
+  y: 1
+
+colors:
+  primary:
+    background: '0x1a1a1a'
+    foreground: '0xf8f8f2'
+  cursor:
+    text:       '0x1d1f21'
+    cursor:     '0xc5c8c6'
+  normal:
+    black:      '0x1d1f21'
+    red:        '0xcc6666'
+    green:      '0xb5bd68'
+    yellow:     '0xf0c674'
+    blue:       '0x81a2be'
+    magenta:    '0xb294bb'
+    cyan:       '0x8abeb7'
+    white:      '0xc5c8c6'
+  bright:
+    black:      '0x969896'
+    red:        '0xcc6666'
+    green:      '0xb5bd68'
+    yellow:     '0xf0c674'
+    blue:       '0x81a2be'
+    magenta:    '0xb294bb'
+    cyan:       '0x8abeb7'
+    white:      '0xffffff'
+
+cursor:
+  style: Block
+  vi_mode_style: Block
+  unfocused_hollow: true
+
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+
+  #selection:
+  # semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+    #URL LAUNCHER
+launcher:
+      program: firefox
+      args: []

@@ -3,9 +3,12 @@
 # Colors ----------------------------------------------------------
 export TERM=xterm-color
 
+export XDG_DATA_HOME="$HOME/.local/share"
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-
+#alias logo='~/repos/font-logos/vectors/archlinux.svg'
 export CLICOLOR=1
+
+[ -z "$PS1" ] && return
 
 alias ls='ls -G'  # OS-X SPECIFIC - the -G command in OS-X is for colors, in Linux it's no groups
 #alias ls='ls --color=auto' # For linux, etc
@@ -32,7 +35,7 @@ export COLOR_YELLOW='\e[1;33m'
 export COLOR_GRAY='\e[1;30m'
 export COLOR_LIGHT_GRAY='\e[0;37m'
 alias colorslist="set | egrep 'COLOR_\w*'"  # Lists all the colors, uses vars in .bashrc_non-interactive
-
+#export test='~/.cheatrc'
 
 
 # Misc -------------------------------------------------------------
@@ -52,7 +55,9 @@ fi
 
 
 # Prompts ----------------------------------------------------------
-export PS1="\[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with only a path
+#export PS1="\[${COLOR_BLUE}\]♚ \w \[${COLOR_LIGHT_PURPLE}\]✈ "  # Primary prompt with only a path
+# export PS1="\[${COLOR_GRAY}\]\u@\h \[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with user, host, and path
+export PS1="\[${COLOR_BLUE}\]♣ \w \[${COLOR_LIGHT_PURPLE}\]➤  "  # Primary prompt with only a path
 # export PS1="\[${COLOR_GRAY}\]\u@\h \[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with user, host, and path
 
 # This runs before the prompt and sets the title of the xterm* window.  If you set the title in the prompt
@@ -128,9 +133,6 @@ alias lsd='ls -l | grep "^d"'
 # la
 # chmod 0775 .gitconfig
 
-# -rw-r--r--@   1 g     staff    270 Jan 11 18:39 .gitconfig
-# -rw-r--r--@   1 g     staff    197 Nov 25 23:04 .gitignore
-
 # Navigation
 alias  ..='cd ..'
 alias ...='cd ../..'
@@ -141,8 +143,8 @@ alias   q='exit'    # quit terminal window
 #/usr/bin/cinnamon-settings
 
 # Apt
-alias ug='sudo dnf upgrade -yy'
-alias ud='sudo dnf update -yy'
+#alias ug='sudo dnf upgrade -yy'
+alias ud='sudo pacman -Syu -yy'
 alias sts='shutdown now'
 alias sus='systemctl suspend'
 
@@ -151,6 +153,7 @@ alias em='emacs -nw'
 alias sn='sensors'
 alias btt='(cat /sys/class/power_supply/BAT0/capacity && cat /sys/class/power_supply/BAT1/capacity)'
 alias v='nvim'
+alias vim='nvim'
 alias j='javac'
 alias g='g++ -o "output" '
 alias gcom='g++ *.cpp -o program'
@@ -164,10 +167,10 @@ alias clk='conky -c /home/zk/.config/conky/clock.conf'
 alias whatsapp='flatpak run io.github.mimbrero.WhatsAppDesktop'
 
 #wifi
-alias wifi='nmcli device wifi list'
+alias wifi='nmcli'
 alias wificon='nmcli device wifi connect'
 
-# wifi gui stalonetray 
+# wifi gui stalonetray
 alias stal='stalonetray'
 # Git
 alias  gs="git status"
@@ -192,6 +195,15 @@ alias uni="cd University/University/univ266/"
 alias oop="cd University/University/univ266/cos2102/"
 alias dsa="cd University/University/univ266/cos2103/"
 
+#random network
+alias sanub='nmcli device wifi connect SANUB'
+alias f9='nmcli device wifi connect f9'
+#alias l= 'logo'
 
 alias sub="/opt/sublime_text/sublime_text "
 #/usr/bin/cinnamon-settings = setting location``
+
+
+neofetch
+
+. "$HOME/.cargo/env"
